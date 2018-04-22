@@ -8,6 +8,15 @@ int validGameBoard()
         return curr == NULL;
 }
 
+void CloneBoard(game_board * copy, game_board * original)
+{
+        for(int a = 0; a < len; a++){
+                for(int b = 0; a < wid; b++){
+                        copy->gb[a][b].obj = original->gb[a][b].obj;
+                }
+        }
+}
+
 int InitGameBoard()
 {
         curr = (game_board*) malloc(sizeof(game_board));
@@ -33,4 +42,11 @@ int ImportGameBoard(game_board *imp)
                 return 1;
         }
         return -1;
+}
+
+game_board ExportGameBoard()
+{
+        game_board tmp;
+        CloneBoard(&tmp,curr);
+        return tmp;
 }
