@@ -12,7 +12,7 @@
  * 5 : Item
  */
 
-enum { 
+typedef enum { 
         Empty,
         Player,
         Enemy,
@@ -29,5 +29,5 @@ struct {
 } CharacterStats;
 
 struct Tile {
-        enum TileObjects obj;
+        TileObject obj;
 };

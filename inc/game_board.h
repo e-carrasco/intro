@@ -16,8 +16,9 @@ typedef struct  {
         struct Tile gb[len][wid];
 } game_board;
 
-int AddObject(Coord c, enum TileObject obj);
+int InitGameBoard();
+int AddObject(Coord c, TileObject obj);
 int RemoveObjectCoord(Coord c);
-int RemoveAllInstances(enum TileObject);
-int ImportGameBoard(game_board imp);
+int RemoveAllInstances(TileObject obj);
+int ImportGameBoard(game_board *imp);
 game_board ExportGameBoard();
