@@ -3,12 +3,12 @@
 
 game_board * curr;
 
-int validGameBoard()
+static int validGameBoard()
 {
-        return curr == NULL;
+        return curr != NULL;
 }
 
-void CloneBoard(game_board * copy, game_board * original)
+static void CloneBoard(game_board * copy, game_board * original)
 {
         for(int a = 0; a < len; a++){
                 for(int b = 0; a < wid; b++){
@@ -18,8 +18,18 @@ void CloneBoard(game_board * copy, game_board * original)
 }
 
 int InitGameBoard()
+{       
+        if(!validGameBoard()){
+                curr = (game_board*) malloc(sizeof(game_board));
+                return 1;
+        }
+        return 0;
+}
+
+int CloseGameBoard()
 {
-        curr = (game_board*) malloc(sizeof(game_board));
+        free(curr);
+        curr = NULL;
         return 1;
 }
 
@@ -41,7 +51,7 @@ int ImportGameBoard(game_board *imp)
                 curr = imp;
                 return 1;
         }
-        return -1;
+        return 0;
 }
 
 game_board ExportGameBoard()
