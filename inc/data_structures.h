@@ -1,6 +1,10 @@
 /* Structures and defintions used by the rest of the program
  *
  */
+
+#ifndef data_structs_h
+#define data_structs_h
+
 #include <stdint.h>
 
 /* Any object that can occupy a tile.
@@ -31,3 +35,5 @@ struct {
 struct Tile {
         TileObject obj;
 };
+
+#endif /* data_structs_h */

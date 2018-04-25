@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\game_board.c">
       <Filter>Source Files</Filter>
     </ClCompile>

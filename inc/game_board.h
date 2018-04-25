@@ -2,6 +2,9 @@
  *
  */
 
+#ifndef game_board_h
+#define game_board_h
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -31,3 +34,5 @@ game_board ExportGameBoard();
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* game_board_h */

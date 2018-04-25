@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "../inc/game_board.h"
+#include "game_board.h"
 
 game_board * curr;
 
