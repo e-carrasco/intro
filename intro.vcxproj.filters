@@ -18,18 +18,12 @@
     <ClCompile Include="src\game_board.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\test_game_board.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\data_structures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\game_board.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\test_game_board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

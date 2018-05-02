@@ -8,6 +8,11 @@ static int validGameBoard()
         return curr != NULL;
 }
 
+static int validCoord(Coord c)
+{
+        return (c.x <= len) && (c.y <= wid);
+}
+
 static void CloneBoard(game_board * copy, game_board * original)
 {
         for(int a = 0; a < len; a++){
@@ -21,7 +26,7 @@ int InitGameBoard()
 {       
         if(!validGameBoard()){
                 curr = (game_board*) malloc(sizeof(game_board));
-                return 1;
+                return validGameBoard();
         }
         return 0;
 }
@@ -35,14 +40,22 @@ int CloseGameBoard()
 
 int AddObject(Coord c, TileObject obj)
 {
-        curr->gb[c.x][c.y].obj = obj;
-        return 1;
+        if(validCoord(c)){
+                curr->gb[c.x][c.y].obj = obj;
+                return 1 > 0;
+        } else {
+                return 1 < 0;
+        }
 }
 
 int RemoveObjectCoord(Coord c)
 {
-        curr->gb[c.x][c.y].obj = Empty;
-        return 1;
+        if(validCoord(c)){
+                curr->gb[c.x][c.y].obj = Empty;
+                return 1;
+        } else {
+                return 0;
+        }
 }
 
 int ImportGameBoard(game_board *imp)

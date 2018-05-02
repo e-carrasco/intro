@@ -119,12 +119,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\game_board.c" />
-    <ClCompile Include="src\test_game_board.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\data_structures.h" />
     <ClInclude Include="inc\game_board.h" />
-    <ClInclude Include="inc\test_game_board.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
