@@ -39,6 +39,7 @@ namespace UnitTestPart
 			obj = Player;
 			Assert::IsTrue(AddObject(c, obj), (wchar_t*)"Failed to add object");
 			Assert::IsTrue(RemoveObjectCoord(c), (wchar_t*)"Failed to add object");
+			CloseGameBoard();
 		}
 
 		TEST_METHOD(test_addremove_invalid_coord)
@@ -52,6 +53,21 @@ namespace UnitTestPart
 			obj = Player;
 			Assert::IsFalse(AddObject(c, obj), (wchar_t*)"Failed to add object");
 			Assert::IsFalse(RemoveObjectCoord(c), (wchar_t*)"Failed to add object");
+			CloseGameBoard();
+		}
+
+		TEST_METHOD(test_addremove_invalid_tile_object)
+		{
+			CloseGameBoard();
+			InitGameBoard();
+			Coord c;
+			c.x = 0;
+			c.y = 0;
+			TileObject obj = (TileObject)120;
+			Assert::IsFalse(AddObject(c, obj), (wchar_t*)"Failed to add object");
+			obj = (TileObject)-1;
+			Assert::IsFalse(AddObject(c, obj), (wchar_t*)"Failed to add object");
+			CloseGameBoard();
 		}
 
 	};

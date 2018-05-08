@@ -8,6 +8,11 @@ static int validGameBoard()
         return curr != NULL;
 }
 
+static int validTileObject(obj)
+{
+        return (obj <= Item) && (obj >= Empty); // This expression may change
+}
+
 static int validCoord(Coord c)
 {
         return (c.x <= len) && (c.y <= wid);
@@ -40,7 +45,7 @@ int CloseGameBoard()
 
 int AddObject(Coord c, TileObject obj)
 {
-        if(validCoord(c)){
+        if(validCoord(c) && validTileObject(obj)){
                 curr->gb[c.x][c.y].obj = obj;
                 return 1 > 0;
         } else {
