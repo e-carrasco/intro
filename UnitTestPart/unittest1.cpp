@@ -42,6 +42,23 @@ namespace UnitTestPart
 			CloseGameBoard();
 		}
 
+		TEST_METHOD(test_addremove_edge_case_objects)
+		{
+			CloseGameBoard();
+			InitGameBoard();
+			Coord c;
+			c.x = 0;
+			c.y = 0;
+			TileObject obj;
+			obj = Empty;
+			Assert::IsTrue(AddObject(c, obj), (wchar_t*)"Failed to add object");
+			Assert::IsTrue(RemoveObjectCoord(c), (wchar_t*)"Failed to add object");
+			obj = Item;
+			Assert::IsTrue(AddObject(c, obj), (wchar_t*)"Failed to add object");
+			Assert::IsTrue(RemoveObjectCoord(c), (wchar_t*)"Failed to add object");
+			CloseGameBoard();
+		}
+
 		TEST_METHOD(test_addremove_invalid_coord)
 		{
 			CloseGameBoard();
