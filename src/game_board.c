@@ -8,6 +8,17 @@ static int validGameBoard()
         return curr != NULL;
 }
 
+static int validImportedBoard(game_board * imp)
+{
+        for(int l = 0; l < len; l++){
+                for(int w = 0; w < wid; w++){
+                        if(!validTileObject(imp->gb[l][w].obj))
+                                return 0;
+                }
+        }
+        return 1;
+}
+
 static int validTileObject(obj)
 {
         return (obj <= Item) && (obj >= Empty); // This expression may change
@@ -21,7 +32,7 @@ static int validCoord(Coord c)
 static void CloneBoard(game_board * copy, game_board * original)
 {
         for(int a = 0; a < len; a++){
-                for(int b = 0; a < wid; b++){
+                for(int b = 0; b < wid; b++){
                         copy->gb[a][b].obj = original->gb[a][b].obj;
                 }
         }
@@ -63,10 +74,16 @@ int RemoveObjectCoord(Coord c)
         }
 }
 
+int RemoveAllInstances(TileObject obj)
+{
+	//TODO: Method Stub
+	return 0;
+}
+
 int ImportGameBoard(game_board *imp)
 {
-        if(validGameBoard()){
-                curr = imp;
+        if(validGameBoard() && validImportedBoard(imp)){
+                CloneBoard(curr,imp);
                 return 1;
         }
         return 0;
