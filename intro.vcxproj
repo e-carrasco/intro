@@ -118,9 +118,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\character_data.c" />
     <ClCompile Include="src\game_board.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\character_data.h" />
     <ClInclude Include="inc\data_structures.h" />
     <ClInclude Include="inc\game_board.h" />
   </ItemGroup>

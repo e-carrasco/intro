@@ -25,7 +25,12 @@ typedef enum {
         Item
 } TileObject;
 
-struct {
+typedef struct {
+	uint8_t x;
+	uint8_t y;
+} Coord;
+
+typedef struct {
         uint32_t health;
         uint32_t attack;
         uint32_t defense;

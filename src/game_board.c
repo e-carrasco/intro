@@ -8,6 +8,11 @@ static int validGameBoard()
         return curr != NULL;
 }
 
+static int validTileObject(TileObject obj)
+{
+	return (obj <= Item) && (obj >= Empty); // This expression may change
+}
+
 static int validImportedBoard(game_board * imp)
 {
         for(int l = 0; l < len; l++){
@@ -17,11 +22,6 @@ static int validImportedBoard(game_board * imp)
                 }
         }
         return 1;
-}
-
-static int validTileObject(obj)
-{
-        return (obj <= Item) && (obj >= Empty); // This expression may change
 }
 
 static int validCoord(Coord c)
